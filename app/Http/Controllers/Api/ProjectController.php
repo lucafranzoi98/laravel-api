@@ -11,7 +11,7 @@ class ProjectController extends Controller
     public function index (){
         return response()->json([
             'status' => 'Success',
-            'result' => Project::paginate(5)
+            'result' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(9)
         ]);
     }
 }
