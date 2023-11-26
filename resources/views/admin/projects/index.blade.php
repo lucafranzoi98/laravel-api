@@ -26,8 +26,6 @@
                     <th scope="col">Title</th>
                     <th scope="col">Image</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Links</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -48,21 +46,6 @@
                             @endif
                         </td>
                         <td>{{ $project->description }}</td>
-                        <td>
-                            @if ($project->type)
-                                {{ $project->type->name }}
-                            @else
-                                No type
-                            @endif
-                        </td>
-                        <td>
-                            <div class="d-flex flex-column">
-                                <a href="{{ $project->code_link }}" target="_blank" class="btn btn-sm btn-dark mb-2"><i
-                                        class="fa-solid fa-code"></i></a>
-                                <a href="{{ $project->preview_link }}" target="_blank" class="btn btn-sm btn-dark"><i
-                                        class="fa-solid fa-link"></i></a>
-                            </div>
-                        </td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('admin.projects.show', $project->slug) }}"
