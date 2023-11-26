@@ -112,6 +112,7 @@
                         </td>
                     </tr>
                 @empty
+                No projects
                 @endforelse
             </tbody>
         </table>
